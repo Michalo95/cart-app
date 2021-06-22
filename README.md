@@ -1,4 +1,8 @@
-# Getting Started with Create React App
+# This project is solely for my own learning purposes. The goal is to learn how to use React and git.
+
+I would like to give credit to Mosh who is a youtuber and the person who provided a tutorial on how to use React! 
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
