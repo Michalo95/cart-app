@@ -16,9 +16,8 @@ class Counters extends Component {
     //when the increment button is pressed, the chooseCounter gets populated with its ID and value
     const newCounters = [...this.state.counters]; //cloning current array; Don't want to directly change the state, we want React to do it by using setState
     const index = newCounters.indexOf(chooseCounter); //grabs the first occurance of a value; 4 if id 1 is chosen
-    newCounters[index] = { ...chooseCounter }; //cloning the counter object that we are using as an argument in this function/method.
+    //newCounters[index] = { ...chooseCounter }; //cloning the chooseCounter object that we are using as an argument in this function/method.
     newCounters[index].value++;
-    console.log(chooseCounter);
     this.setState({ counters: newCounters });
   };
 
