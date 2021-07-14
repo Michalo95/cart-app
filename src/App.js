@@ -49,7 +49,7 @@ class App extends Component {
         <NavBar //These are objects created to be used in navbar.jsx file
           totalCounters={this.state.counters.filter((c) => c.value > 0).length}
         />
-        <main className="container">
+        <main>
           <Counters //These are objects created to be used in counters.jsx file
             counters={this.state.counters}
             onReset={this.handleReset}
