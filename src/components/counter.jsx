@@ -1,8 +1,21 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  
+  //Updating phase visualization in console
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter !== this.props.counter) {
+      // Ajax call and get new data from the server
+    }
+  }
+  //Unmounting phase visualization in console
+  componentWillUnmount() {
+    console.log("Counter - Unmount");
+  }
   render() {
+    console.log("Counter - Rendered");
+
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
@@ -36,16 +49,15 @@ class Counter extends Component {
 
 export default Counter;
 
+//A method, like a function, is a set of instructions that perform a task.
+//The difference is that a method is associated with an object, while a function is not.
 
-  //A method, like a function, is a set of instructions that perform a task.
-  //The difference is that a method is associated with an object, while a function is not.
+// constructor() {   //This is used for binding, otherwise you can't use "this" within the function or method
+//   super();
+//   this.handleIncrement = this.handleIncrement.bind(this);
+// }
 
-  // constructor() {   //This is used for binding, otherwise you can't use "this" within the function or method
-  //   super();
-  //   this.handleIncrement = this.handleIncrement.bind(this);
-  // }
-
-  //New method of binding instead of creating a constructor
-  //handleIncrement = () => {
-  //this.setState({ value: this.state.value + 1 });
-  //};
+//New method of binding instead of creating a constructor
+//handleIncrement = () => {
+//this.setState({ value: this.state.value + 1 });
+//};

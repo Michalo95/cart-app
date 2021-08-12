@@ -13,6 +13,18 @@ class App extends Component {
     ],
   };
 
+  //Lifecycle hooks can only be used with class components
+  constructor() {
+    //Called once, it is the right place to initialize the properties in this class
+    super(); //Calls the constructor of its parent class
+    console.log("App - Constructor");
+  }
+
+  componentDidMount() {
+    //This method is called after our component is rendered into the DOM and it's the perfect place to make Ajax calls to get data from the server.
+    console.log("App - Mounted"); //When a component is mounted, it means that component is in the DOM
+  }
+
   // (...) spread operator is used for cloning objects, arrays, etc.
   handleIncrement = (chooseCounter) => {
     //when the increment button is pressed, the chooseCounter gets populated with its ID and value
@@ -44,10 +56,13 @@ class App extends Component {
   };
 
   render() {
+    //App and all it's children are Rendered and then mounted
+    console.log("App - Rendered"); //Basically returns an element that represents our virtual DOM';Now React gets that virtual DOM and renders it in the actual browser DOM.
+
     return (
       <React.Fragment>
         <NavBar //These are objects created to be used in navbar.jsx file
-          totalCounters={this.state.counters.filter((c) => c.value > 0).length}
+          totalCounters={this.state.counters.filter((c) => c.value > 0).length} //Display a number of counters that have a value greater than zero
         />
         <main>
           <Counters //These are objects created to be used in counters.jsx file

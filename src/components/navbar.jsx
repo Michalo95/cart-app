@@ -1,14 +1,16 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Stateless Functional Component (Used when there is no states beign used)
-const NavBar = (props) => {
+const NavBar = ({totalCounters}) => {
+  console.log("NavBar - Rendered");
+
   return (
     <nav className="navbar navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           Navbar{" "}
           <span className="badge badge-pill badge-secondary">
-            {props.totalCounters}
+            {totalCounters}
           </span>
         </a>
       </div>
